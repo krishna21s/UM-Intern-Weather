@@ -19,7 +19,7 @@ const Whether = () => {
     const [bg, setBg] = useState('');
     AOS.init({
         disable: true, // Disable animations on scroll
-      });
+    });
     function handleInputChange(event) {
         setInputData(event.target.value);
     }
@@ -48,7 +48,8 @@ const Whether = () => {
                 temperature: data.main.temp,
                 windSpeed: data.wind.speed,
                 whetherImg: data.weather[0].icon,
-                weatherCondition: data.weather[0].main
+                weatherCondition: data.weather[0].main,
+                weatherRain: data
             });
             setErrorHandle('');
         } catch (error) {
@@ -78,6 +79,13 @@ const Whether = () => {
             div.style.color = 'rgba(44, 30, 30, 0.849)';
         }
         if (whetherData.weatherCondition == 'Drizzle' || whetherData.weatherCondition == 'Rain') {
+            const div = themeClass.current;
+            div.classList.add('bg-drizzle')
+            setBg('https://api14.iloveimg.com/thumbnails/g27d4mrsg3ztmnzAgm5d3njAggxwks5k311fztvgccn3ccg26kc9y18bvcr731r0kx9vx31gn4mjnvsmms8fzmsm3f753rkwh1gnkt7v3yp3y64319AjAwcgjvf41cb1446dd13y0pywzgrpngkq8j4zhjkt2bA03vw1xt1n1g95k4g058dq/d99c8b0e853fb92642e288043d996cc2637d8dbee95279bb5a1f83ccf4565565.jpg');
+            div.style.color = 'white';
+        }
+        // this condition is only for rain (for some exceptions)😊
+        if (whetherData.weatherRain == 'Rain') {
             const div = themeClass.current;
             div.classList.add('bg-drizzle')
             setBg('https://api14.iloveimg.com/thumbnails/g27d4mrsg3ztmnzAgm5d3njAggxwks5k311fztvgccn3ccg26kc9y18bvcr731r0kx9vx31gn4mjnvsmms8fzmsm3f753rkwh1gnkt7v3yp3y64319AjAwcgjvf41cb1446dd13y0pywzgrpngkq8j4zhjkt2bA03vw1xt1n1g95k4g058dq/d99c8b0e853fb92642e288043d996cc2637d8dbee95279bb5a1f83ccf4565565.jpg');

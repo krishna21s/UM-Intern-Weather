@@ -110,6 +110,7 @@ p {
 }
 
 /* Loading Animations */
+
 .ball4 {
   position: absolute;
   height: 12px;
@@ -478,21 +479,24 @@ p {
   width: 20px;
   border-radius: 50%;
 }
+
 /*Input Animations*/
 .input-loc button {
   transition: transform 0.7s ease-in-out;
 }
 
 .input-loc .btn:hover {
-  transform:rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .input-loc button:active {
   transform: scale(0.9);
 }
-.input-loc{
+
+.input-loc {
   transition: transform 1s ease-in-out;
 }
-.input-loc:focus{
+
+.input-loc:focus {
   transform: scale(10px);
 }
