@@ -81,14 +81,14 @@ const Whether = () => {
         if (whetherData.weatherCondition == 'Drizzle' || whetherData.weatherCondition == 'Rain') {
             const div = themeClass.current;
             div.classList.add('bg-drizzle')
-            setBg('https://images.pexels.com/photos/21492/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600');
+            setBg('https://images.pexels.com/photos/21492/pexels-photo.jpg');
             div.style.color = 'white';
         }
         // this condition is only for rain (for some exceptions)😊
         if (whetherData.weatherRain == 'Rain') {
             const div = themeClass.current;
             div.classList.add('bg-drizzle')
-            setBg('https://images.pexels.com/photos/21492/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600');
+            setBg('https://images.pexels.com/photos/21492/pexels-photo.jpg');
             div.style.color = 'white';
         }
         if (whetherData.weatherCondition == 'Haze' || whetherData.weatherCondition == 'Mist') {
